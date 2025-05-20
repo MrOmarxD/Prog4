@@ -4,15 +4,15 @@
 class Figura
 {
 private:
-	static int counter;
+	static int numFiguras;
 	char *nombre;
 public:
 	Figura();
-	Figura(char* nombre);
-	~Figura();
-	char *getNombre();
-	float getPerimetro();
-	void imprimir();
+	Figura(const char *nombre);
+	virtual float getPerimetro() = 0;
+	virtual void imprimir();
+	virtual ~Figura();
+	static int getNumFiguras();
 };
 
 #endif /* FIGURA_H_ */

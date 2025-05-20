@@ -3,24 +3,25 @@
 #include <string.h>
 
 using namespace std;
+int Figura::numFiguras = 0;
 
 Figura::Figura() {
 	this->nombre = NULL;
-	Figura::counter++;
+	Figura::numFiguras++;
 }
 
-Figura::Figura(char *nombre) {
+Figura::Figura(const char *nombre) {
 	this->nombre = new char[strlen(nombre)+1];
 	strcpy(this->nombre, nombre);
-	Figura::counter++;
+	Figura::numFiguras++;
 }
 
 Figura::~Figura() {
 	delete [] this->nombre;
 }
 
-char* Figura::getNombre() {
-	return this->nombre;
+int Figura::getNumFiguras() {
+	return Figura::numFiguras;
 }
 
 void Figura::imprimir() {

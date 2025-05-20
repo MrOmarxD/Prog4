@@ -2,7 +2,7 @@
 #define PUNTO_H_
 #include "Figura.h";
 
-class Punto : public Figura
+class Punto
 {
 	int x, y;
 
